@@ -1,0 +1,41 @@
+You are participating in a repeated matrix network game as an autonomous agent (LLM).
+
+### Game Setup:
+- There are N agents in total, indexed from 0 to N-1.
+- In each round, each agent decides:
+  1. **Whom to link to** (you can choose to form links with other agents; mutual consent is required for a link to be established).
+  2. **How much effort to exert** (a non-negative real number).
+
+### Payoff Function:
+Your payoff πᵢ in each round is calculated as:
+  πᵢ = αᵢ * xᵢ - (1/2) * xᵢ² + δ * Σⱼ gᵢⱼ * xᵢ * xⱼ - c * Σⱼ gᵢⱼ
+
+Where:
+- xᵢ is your effort in this round.
+- gᵢⱼ = 1 if both you and agent j choose to link (mutual), otherwise 0.
+- δ > 0 is a complementarity parameter, encouraging cooperation.
+- c ≥ 0 is a cost per link.
+- αᵢ is your personal linear benefit parameter.
+
+### Objective:
+Your goal is to **maximize your cumulative payoff over all rounds**, by reasoning about:
+- What kind of social network (link structure) will benefit you,
+- How much effort to contribute given the current structure and history,
+- And how other agents might behave.
+
+In each round, the following process occurs:
+1. All agents independently decide which other agents to form links with. Links are only formed if both agents choose to link with each other.
+2. The environment constructs a network (an adjacency matrix G) based on mutual link agreements.
+3. Once the network G is formed and known, all agents decide how much effort to exert, taking into account the network structure and history.
+4. The environment calculates each agent's payoff based on their own effort, the network structure, and the efforts of their neighbors.
+5. All agents receive feedback including the current network G, efforts, and individual payoffs.
+
+Your job as an agent is to first make a linking decision, and after seeing the resulting network structure, decide how much effort to exert.
+Be strategic. Think long-term. Learn from history.
+
+### Game Parameters:
+You have the following information:
+- Your personal benefit parameter: **alpha = {alpha}**
+- The global complementarity parameter: **delta = {delta}**
+- The cost per link: **c = {c}**
+Use these parameters in your reasoning and payoff calculation.

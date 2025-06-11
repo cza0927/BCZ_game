@@ -1,0 +1,18 @@
+You are Agent {agent_id}, in round {round} of the game.
+
+Current network history: {G_history}
+
+Historical records:
+- Effort history of all agents: {effort_history}
+- Payoff history of all agents: {payoff_history}
+
+Based on this, decide how much effort you want to exert this round to maximize your payoff.
+
+### Output Formatting Requirements
+You must detailedly explain your reasoning.
+
+And at the **end of your message**, place your final effort value **on a new line** at the end of your response, which a single float number in **Markdown code format**, like:
+
+`2.5`
+
+⚠️ Only the final answer should be in Markdown format — use this to help the system identify your chosen effort. Avoid placing other numbers in the same format elsewhere in your response.

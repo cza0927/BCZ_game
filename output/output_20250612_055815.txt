@@ -1,0 +1,96 @@
+
+=== ROUND 1 ===
+[Agent 0] Link decision reasoning:
+0 0 1
+[Agent 0 link decision]: [0.0, 0.0, 1.0]
+[Agent 1] Link decision reasoning:
+1 0 1
+[Agent 1 link decision]: [1.0, 0.0, 1.0]
+[Agent 2] Link decision reasoning:
+1 0 0
+[Agent 2 link decision]: [1.0, 0.0, 0.0]
+[Agent 0] Effort decision reasoning:
+`2`
+[Agent 0 effort decision]: 2.0
+[Agent 1] Effort decision reasoning:
+`2`
+[Agent 1 effort decision]: 2.0
+[Agent 2] Effort decision reasoning:
+`2`
+[Agent 2 effort decision]: 2.0
+Global Welfare W = 2.00
+Round 1 link matrix:
+[[0. 0. 1.]
+ [0. 0. 0.]
+ [1. 0. 0.]]
+Round 1 effort: [2. 2. 2.]
+Round 1 payoffs: [1. 0. 1.]
+Round 1 total welfare: 2.00
+
+=== ROUND 2 ===
+[Agent 0] Link decision reasoning:
+0 0 1
+[Agent 0 link decision]: [0.0, 0.0, 1.0]
+[Agent 1] Link decision reasoning:
+1 0 1
+[Agent 1 link decision]: [1.0, 0.0, 1.0]
+[Agent 2] Link decision reasoning:
+1 0 0
+[Agent 2 link decision]: [1.0, 0.0, 0.0]
+[Agent 0] Effort decision reasoning:
+`2`
+[Agent 0 effort decision]: 2.0
+[Agent 1] Effort decision reasoning:
+`2`
+[Agent 1 effort decision]: 2.0
+[Agent 2] Effort decision reasoning:
+`2`
+[Agent 2 effort decision]: 2.0
+Global Welfare W = 2.00
+Round 2 link matrix:
+[[0. 0. 1.]
+ [0. 0. 0.]
+ [1. 0. 0.]]
+Round 2 effort: [2. 2. 2.]
+Round 2 payoffs: [1. 0. 1.]
+Round 2 total welfare: 2.00
+
+=== ROUND 3 ===
+[Agent 0] Link decision reasoning:
+0 0 1
+[Agent 0 link decision]: [0.0, 0.0, 1.0]
+[Agent 1] Link decision reasoning:
+1 0 1
+[Agent 1 link decision]: [1.0, 0.0, 1.0]
+[Agent 2] Link decision reasoning:
+1 0 0
+[Agent 2 link decision]: [1.0, 0.0, 0.0]
+[Agent 0] Effort decision reasoning:
+`2`
+[Agent 0 effort decision]: 2.0
+[Agent 1] Effort decision reasoning:
+`2`
+[Agent 1 effort decision]: 2.0
+[Agent 2] Effort decision reasoning:
+`2`
+[Agent 2 effort decision]: 2.0
+Global Welfare W = 2.00
+Round 3 link matrix:
+[[0. 0. 1.]
+ [0. 0. 0.]
+ [1. 0. 0.]]
+Round 3 effort: [2. 2. 2.]
+Round 3 payoffs: [1. 0. 1.]
+Round 3 total welfare: 2.00
+[INFO] Convergence plot saved to: output\bcz_convergence_analysis.png
+
+=== BENCHMARK COMPARISON ===
+[Benchmark Optimal G*]:
+ [[0. 0. 1.]
+ [0. 0. 1.]
+ [1. 1. 0.]]
+[Benchmark Optimal Efforts x*]: [3. 3. 4.]
+[Benchmark Payoffs π*]: [3.5 3.5 6. ]
+[Benchmark Global Welfare W*]: 13.0000
+[LLM Agent Final Welfare]: 2.0000
+[Efficiency Ratio]: 0.1538

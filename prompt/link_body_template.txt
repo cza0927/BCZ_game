@@ -1,0 +1,19 @@
+You are Agent {agent_id}, in round {round} of the game.
+
+Your task is to decide which agents you would like to form a mutual link with.
+
+### Historical Information:
+- Group structure history (G_history): {G_history}
+- Effort history of all agents: {effort_history}
+- Payoff history of all agents: {payoff_history}
+
+You must detailedly explain your reasoning.
+
+And at the **end of your message**, Please return your final linking decision, which is a binary vector of length N = {num_agents} **on a new line**, indicating whom you want to link with.
+- 1 means you want to link to that agent.
+- 0 means you do not.
+- You cannot link to yourself (position {agent_id} must be 0).
+
+Output must be space-separated integers like: `0 1 0 1 0` (no explanation in that line).
+
+Do not swap the order. Always follow [Agent 0, Agent 1, Agent 2, ...] index order.
