@@ -64,6 +64,8 @@ CONFIG = {
 }
 ```
 
+若要利用LLM的api进行模拟，请将"use_mock"设置为False，同时在.env中输入api
+
 ### 3. 启动仿真运行
 
 ```bash
@@ -79,7 +81,7 @@ python main.py
 
 ---
 
-## 输出内容
+## 📈 输出内容
 
 每次运行后将输出：
 
@@ -90,7 +92,7 @@ python main.py
 
 ---
 
-## 项目亮点
+## 🧠 项目亮点
 
 * ✅ 支持 LLM agent 的社会博弈推理评估
 * ✅ 模拟连边结构演化与 effort 策略学习
@@ -99,7 +101,7 @@ python main.py
 
 ---
 
-## 后续可拓展方向
+## 🧪 后续可拓展方向
 
 * 引入异质化 `alpha_i`, `delta_ij`，建模不对称合作关系
 * 加入 reputation、惩罚机制，测试策略演化
