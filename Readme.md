@@ -127,16 +127,14 @@ python main.py
 
 ---
 
-## 🧠 项目亮点
+## 🧪 项目支持
 
 * ✅ 支持 LLM agent 的社会博弈推理评估
 * ✅ 模拟连边结构演化与 effort 策略学习
 * ✅ 可切换 OpenAI 与 Mock 模式，方便 Debug
 * ✅ 引入 `c` 成本后，支持 benchmark 最优结构求解
 
----
-
-## 🧪 后续可拓展方向
+## 🧪 后续拓展
 
 * 引入异质化 `alpha_i`, `delta_ij`，建模不对称合作关系
 * 加入 reputation、惩罚机制，测试策略演化
