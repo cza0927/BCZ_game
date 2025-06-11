@@ -1,8 +1,47 @@
-# BCZ\_Game 项目说明文档（README 中文版）
+# BCZ\_Game 项目说明文档
 
 本项目基于 Ballester–Calvó-Armengol–Zenou (BCZ) 模型，构建了一个多智能体网络博弈环境。通过结合 LLM 决策代理（如 GPT 系列）与经典博弈求解方法，探索智能体在合作结构与努力选择中的社会推理能力。
 
+## 🎲 BCZ 博弈模型简介
+
+BCZ（Ballester–Calvó-Armengol–Zenou）博弈是一种**网络互依型努力博弈（Effort Game on Networks）**，由 Ballester et al. 在 2006 年提出，用于刻画个体在社会网络中决策努力水平的最优方式。
+
+每个智能体 $i \in \{1, ..., n\}$ 都可选择其努力值 $x_i$，同时与网络中其他个体 $j$ 之间存在连接关系 $g_{ij} \in \{0, 1\}$。
+
 ---
+
+### 📐 收益函数公式（payoff function）
+
+BCZ 博弈中，agent $i$ 的总收益为：
+
+$$
+\pi_i = \alpha_i x_i - \frac{1}{2}x_i^2 + \delta \sum_{j \neq i} g_{ij} x_i x_j - c \sum_{j \neq i} g_{ij}
+$$
+
+其中：
+
+* $\alpha_i$：个体的私有收益敏感系数（倾向于努力）
+* $x_i$：agent 的努力水平
+* $g_{ij}$：是否与 agent $j$ 连边（只有当 $i$ 与 $j$ 互相选择对方时，$g_{ij} = 1$）
+* $\delta$：互惠强度系数（努力互相促进的程度）
+* $c$：每建立一条边的成本
+
+全局 welfare 为所有 agent 收益之和：
+
+$$
+W = \sum_i \pi_i
+$$
+
+---
+
+### 🎯 博弈目标
+
+每个智能体希望最大化自身收益 $\pi_i$，而研究者可以关心：
+
+* 个体博弈后是否能收敛至稳定网络结构；
+* 在有限轮数内是否能逼近理论最优的 $\{g_{ij}^*, x_i^*\}$；
+* LLM agent 是否具备 “社会推理” 能力，在交互中收敛到高效率结构。
+
 
 ## 📁 项目结构
 
