@@ -29,9 +29,13 @@ class MockLLMWrapper: # 用于debug，在main.py中的CONFIG中的"use_mock"处�
 
 class OpenAIWrapper:
     def __init__(self, model_name="gpt-4o-mini", temperature=0.7):
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         self.model = model_name
         self.temperature = temperature
+
+        self.client = OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY"),
+            base_url="https://vip.yi-zhan.top/v1"
+        )
 
     def chat(self, system_prompt: str, user_prompt: str) -> str:
         try:
