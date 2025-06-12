@@ -2,9 +2,9 @@
 import numpy as np
 
 CONFIG = {
-    "use_mock": True,
+    "use_mock": False,
     "num_agents": 3,
-    "T": 3,
+    "T": 20,
     "alpha": np.array([1.0, 1.0, 1.0]),
     "delta": 0.5,
     "c": 1.0,
