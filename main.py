@@ -80,6 +80,22 @@ def analyze_convergence(G_history, effort_history, payoff_history, alpha=None, d
     plt.close(fig)
     print(f"[INFO] Convergence plot saved to: {fig_path}")
 
+# 若收敛，则提前终止
+def should_terminate(G_history, welfare_history, threshold_rounds=5, welfare_delta_threshold=1.0):
+    import numpy as np
+    if len(G_history) < threshold_rounds or len(welfare_history) < threshold_rounds + 1:
+        return False
+
+    recent_Gs = G_history[-threshold_rounds:]
+    if not all(np.array_equal(recent_Gs[i], recent_Gs[0]) for i in range(1, threshold_rounds)):
+        return False
+
+    delta_welfare = np.array(welfare_history[-threshold_rounds:]) - np.array(welfare_history[-threshold_rounds - 1:-1])
+    if np.sum(delta_welfare) < welfare_delta_threshold:
+        return True
+
+    return False
+
 # 正式模拟BCZ_game
 def run_simulation():
     num_agents = CONFIG["num_agents"]
@@ -148,6 +164,11 @@ def run_simulation():
         print(f"Round {t+1} effort: {x_curr}")
         print(f"Round {t+1} payoffs: {pi_curr}")
         print(f"Round {t+1} total welfare: {np.sum(pi_curr):.2f}")
+        
+        # 提前终止判定
+        if should_terminate(env.G_history, env.payoff_history):
+            print(f"⚠️ 提前终止：连续 {5} 轮 G 未变且 welfare 增量低于阈值")
+            break
 
     # 可视化收敛分析
     analyze_convergence(
