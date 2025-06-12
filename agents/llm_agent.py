@@ -76,17 +76,25 @@ class LLMAgent(BaseAgent):
             return [0.0] * self.num_agents
 
     def parse_effort_response(self, response: str) -> float:
-        # 将响应按行拆开，只检查最后几行
-        lines = response.strip().splitlines()
-        # 从最后几行往上找第一个 Markdown code 格式的浮点数（如 `2.5`）
-        for line in reversed(lines[-5:]):
-            match = re.match(r"^\s*`([0-9]+(?:\.[0-9]+)?)`\s*$", line.strip())
-            if match:
-                try:
-                    return float(match.group(1))
-                except Exception:
-                    print(f"[ERROR] Failed to convert effort: {match.group(1)}")
-                    return 0.0
+        """
+        解析 agent 的 effort 响应，从后向前提取第一个合法的数值（整数或浮点数）。
+        """
+        # 去除 markdown 格式干扰
+        cleaned = response.replace("`", "").replace("**", "").strip()
 
-        print(f"[ERROR] Cannot parse effort from response: {response}")
+        # 提取所有数值
+        matches = re.findall(r"\b([0-9]+(?:\.[0-9]+)?)\b", cleaned)
+        if not matches:
+            print(f"[ERROR] Cannot parse effort from response: {response}")
+            return 0.0
+
+        # 从后往前找第一个合法的 effort 值
+        for val in reversed(matches):
+            try:
+                effort = float(val)
+                return effort
+            except ValueError:
+                continue
+
+        print(f"[ERROR] Failed to convert effort from response: {response}")
         return 0.0
