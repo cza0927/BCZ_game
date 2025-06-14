@@ -1,4 +1,4 @@
-# BCZ\_Game 项目说明文档
+# Sequential BCZ\_Game 项目说明文档
 
 本项目基于 Ballester–Calvó-Armengol–Zenou (BCZ) 模型，构建了一个多智能体网络博弈环境。通过结合 LLM 决策代理（如 GPT 系列）与经典博弈求解方法，探索智能体在合作结构与努力选择中的社会推理能力。
 
