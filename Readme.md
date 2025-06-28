@@ -1,6 +1,6 @@
-# Sequential BCZ\_Game 项目说明文档
+# Sequential BCZ\_Game Simulator 项目说明文档
 
-本项目基于 Ballester–Calvó-Armengol–Zenou (BCZ) 模型，构建了一个多智能体网络博弈环境。通过结合 LLM 决策代理（如 GPT 系列）与经典博弈求解方法，探索智能体在合作结构与努力选择中的社会推理能力。
+本项目基于 Ballester–Calvó-Armengol–Zenou (BCZ) 模型，构建了一个多智能体网络博弈环境。通过结合 LLM 决策智能体（如 GPT 系列）与经典博弈求解方法，探索智能体在合作结构与努力选择中的社会推理能力。
 
 ## 🎲 BCZ 博弈模型简介
 
@@ -65,6 +65,7 @@ BCZ_Game/
 │
 ├── config.py                 # 全局参数配置（alpha, delta, c, num_agents等）
 ├── main.py                   # 主程序入口，运行多轮博弈仿真
+├── .env                      # 配置api窗口
 ├── bcz_benchmark_solver.py   # 使用经典 BCZ 方法求理论最优结构和effort
 ├── requirements.txt          # 所需 Python 库（建议使用虚拟环境）
 └── README.md                 # 本文件
